@@ -8,6 +8,8 @@ using UnityEngine;
 
 public class UIBase : MonoBehaviour
 {
+    // TODO：UIBase应该拥有两个Static属性：name和address
+    // 添加一个纯虚函数，保证每一个子类都需要实现，内容为注册name和address
     public virtual void Show()
     {
         this.gameObject.SetActive(true);

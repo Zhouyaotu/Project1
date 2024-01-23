@@ -26,7 +26,7 @@ public class UIManager : MonoBehaviour
         UIBase ui = null;
         if(!uiList.TryGetValue(name, out ui))
         {
-            // TODO: 实现一个资源管理类
+            // TODO: 实现一个资源管理类，加载addressable资源
             GameObject uiGO = Instantiate( Resources.Load("UI/" + name)) as GameObject;
             if(uiGO)
             {
