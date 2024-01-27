@@ -12,6 +12,9 @@ public class FightBegin : FightUnit
         // 加载关卡敌人
         EnemyManager.Instance.LoadEnemyRes("某个LevelID");
 
+        // 初始化关卡玩家数据
+        FightStatManager.Instance.InitPlayer();
+
         // 切换战斗UI
         UIManager.Instance.ShowUI<FightView>("FightUI");
     }

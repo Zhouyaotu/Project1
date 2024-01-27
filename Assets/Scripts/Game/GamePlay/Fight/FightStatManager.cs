@@ -18,15 +18,20 @@ public class FightStatManager : MonoBehaviour
 
     private FightUnit currentFightStat;
 
+    private FightPlayer fightPlayer;
+
     private void Awake()
     {
         FightStatManager.Instance = this;
     }
+
     public void Init()
     {
-
+        this.fightPlayer = new FightPlayer();
+        
     }
 
+    // 切换对局状态（状态机：我方回合-对方回合-胜利-失败）
     public void SwitchFightStat(FightStat stat)
     {
         switch (stat)
@@ -59,4 +64,70 @@ public class FightStatManager : MonoBehaviour
             this.currentFightStat.OnUpdate();
         }
     }
+
+    public void InitPlayer()
+    {
+        this.fightPlayer.Init(10,10,10);
+    }
+
+    #region 管理对局中Player状态
+    //======================
+    // 管理对局中Player状态
+    //======================
+    int PlayerMaxHp
+    {
+        get
+        {
+            return this.fightPlayer.maxHp;
+        }
+        set
+        {
+            this.fightPlayer.maxHp = value;
+        }
+    }
+    int PlayerCurHp
+    {
+        get
+        {
+            return this.fightPlayer.curHp;
+        }
+        set
+        {
+            this.fightPlayer.curHp = value;
+        }
+    }
+    int PlayerMaxPower
+    {
+        get
+        {
+            return this.fightPlayer.maxPower;
+        }
+        set
+        {
+            this.fightPlayer.maxPower = value;
+        }
+    }
+    int PlayerCurPower
+    {
+        get
+        {
+            return this.fightPlayer.curPower;
+        }
+        set
+        {
+            this.fightPlayer.curPower = value;
+        }
+    }
+    int PlayerDefense
+    {
+        get
+        {
+            return this.fightPlayer.defense;
+        }
+        set
+        {
+            this.fightPlayer.defense = value;
+        }
+    }
+    #endregion
 }

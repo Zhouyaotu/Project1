@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 373049190288419669}
   - component: {fileID: 373049190288419674}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Txt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 373049190368253400}
   - component: {fileID: 373049190368253401}
   m_Layer: 5
-  m_Name: noCard
+  m_Name: UsedCardPile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -169,7 +169,7 @@ GameObject:
   - component: {fileID: 373049190538736536}
   - component: {fileID: 373049190538736537}
   m_Layer: 5
-  m_Name: icon
+  m_Name: Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -246,7 +246,7 @@ GameObject:
   - component: {fileID: 373049190654549820}
   - component: {fileID: 373049190654549821}
   m_Layer: 5
-  m_Name: mana
+  m_Name: Power
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -324,7 +324,7 @@ GameObject:
   - component: {fileID: 373049190841705884}
   - component: {fileID: 373049190841705885}
   m_Layer: 5
-  m_Name: turnBtn
+  m_Name: BtnEndTurn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -446,7 +446,7 @@ GameObject:
   - component: {fileID: 373049190918136351}
   - component: {fileID: 373049190918136348}
   m_Layer: 5
-  m_Name: Text
+  m_Name: TxtCount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -541,7 +541,7 @@ GameObject:
   - component: {fileID: 373049191081578829}
   - component: {fileID: 373049191081578674}
   m_Layer: 5
-  m_Name: Text
+  m_Name: TxtCount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -621,7 +621,7 @@ GameObject:
   - component: {fileID: 373049191483264955}
   - component: {fileID: 373049191483264952}
   m_Layer: 5
-  m_Name: hasCard
+  m_Name: CardPile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -645,7 +645,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 200, y: 92}
+  m_AnchoredPosition: {x: 119, y: 92}
   m_SizeDelta: {x: 105, y: 126}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &373049191483264955
@@ -739,7 +739,7 @@ GameObject:
   - component: {fileID: 373049191660401168}
   - component: {fileID: 373049191660401169}
   m_Layer: 5
-  m_Name: icon
+  m_Name: Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -816,7 +816,7 @@ GameObject:
   - component: {fileID: 373049191964361244}
   - component: {fileID: 373049191964361245}
   m_Layer: 5
-  m_Name: Text
+  m_Name: TxtCount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -896,7 +896,7 @@ GameObject:
   - component: {fileID: 3305336924209145175}
   - component: {fileID: 3305336924209145174}
   m_Layer: 5
-  m_Name: fangyu
+  m_Name: Defencse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -916,7 +916,7 @@ RectTransform:
   m_Children:
   - {fileID: 3305336925324545390}
   m_Father: {fileID: 3305336925742267506}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
@@ -974,7 +974,7 @@ GameObject:
   - component: {fileID: 3305336924432429856}
   - component: {fileID: 3305336924432429859}
   m_Layer: 5
-  m_Name: moneyTxt
+  m_Name: TxtHpCount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -993,7 +993,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3305336925742267506}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1149,7 +1149,7 @@ GameObject:
   - component: {fileID: 3305336925710529735}
   - component: {fileID: 3305336925710529734}
   m_Layer: 5
-  m_Name: fill
+  m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1223,7 +1223,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3305336925742267506}
   m_Layer: 5
-  m_Name: hp
+  m_Name: HP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1243,14 +1243,14 @@ RectTransform:
   m_Children:
   - {fileID: 4903522901234575302}
   - {fileID: 3305336925710529721}
-  - {fileID: 3305336924209145161}
   - {fileID: 3305336924432429858}
+  - {fileID: 3305336924209145161}
   m_Father: {fileID: 373049191630560908}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 471, y: 439}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 471, y: 81}
   m_SizeDelta: {x: 557.22, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &6609504610208615156
@@ -1265,7 +1265,7 @@ GameObject:
   - component: {fileID: 5931364838738091377}
   - component: {fileID: 330818549823713460}
   m_Layer: 5
-  m_Name: mask
+  m_Name: Mask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
