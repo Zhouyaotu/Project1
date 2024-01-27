@@ -16,6 +16,7 @@ public class AppMain : MonoBehaviour
         // GamePlay
         this.gameObject.AddComponent<RoleManager>();
         this.gameObject.AddComponent<FightManager>();
+        this.gameObject.AddComponent<EnemyManager>();
     }
 
     void Start()
