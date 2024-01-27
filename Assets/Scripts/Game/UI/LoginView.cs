@@ -23,7 +23,8 @@ public class LoginView : UIBase
 
     private void OnClick(GameObject go, PointerEventData pData)
     {
-        Debug.Log("OnClick !");
+        Debug.Log("Start OnClick !");
         this.Hide();
+        FightManager.Instance.SwitchFightStat(FightStat.Start);
     }
 }

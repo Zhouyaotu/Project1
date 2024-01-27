@@ -45,6 +45,7 @@ public class FightManager : MonoBehaviour
             default:
                 break;
         }
+        currentFightStat.Init();
     }
 
     private void Update()
