@@ -12,15 +12,15 @@ public enum FightStat
     Lose,
 }
 
-public class FightManager : MonoBehaviour
+public class FightStatManager : MonoBehaviour
 {
-    public static FightManager Instance;
+    public static FightStatManager Instance;
 
     private FightUnit currentFightStat;
 
     private void Awake()
     {
-        FightManager.Instance = this;
+        FightStatManager.Instance = this;
     }
 
     public void SwitchFightStat(FightStat stat)

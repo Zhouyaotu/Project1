@@ -25,6 +25,6 @@ public class LoginView : UIBase
     {
         Debug.Log("Start OnClick !");
         this.Hide();
-        FightManager.Instance.SwitchFightStat(FightStat.Start);
+        FightStatManager.Instance.SwitchFightStat(FightStat.Start);
     }
 }

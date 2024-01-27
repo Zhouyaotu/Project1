@@ -6,12 +6,12 @@ public class Enemy : MonoBehaviour
 {
     protected Dictionary<string, string> data;
 
-    public void Init(Dictionary<string, string> enemyData)
+    public virtual void Init(Dictionary<string, string> enemyData)
     {
         this.data = enemyData;
     }
 
-    public void Destory()
+    public virtual void Destory()
     {
 
     }
