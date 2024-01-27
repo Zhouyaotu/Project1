@@ -2,6 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+public class CardConfigManager
+{
+    enum cardDataType
+    {
+        Name,
+        Idx
+    };
+    Dictionary<cardDataType, string> typeDic;
+
+
+}
+*/
+
+public class PropertyType
+{
+    //Common data type
+    public const string name = "name";
+    public const string idx = "index";
+}
+
+
 //整个游戏配置表的管理器
 public class GameConfigManager
 {
@@ -11,11 +33,13 @@ public class GameConfigManager
     private GameConfigData enemyData;
     private GameConfigData levelData;
 
-    private TextAsset textAsset;
+    //textAsset本来在此处
 
     //初始化txt配置文件并加载
     public void init()
     {
+        TextAsset textAsset;
+
         textAsset = Resources.Load<TextAsset>("Data/card");
         cardData=new GameConfigData(textAsset.text);
 
@@ -26,33 +50,34 @@ public class GameConfigManager
         levelData = new GameConfigData(textAsset.text);
     }
 
-    public List<Dictionary<string,string>> GetCardLines()
+
+    public Dictionary<string, Dictionary<string,string>> GetCardDataDics()
     {
-        return cardData.GetLines();
+        return cardData.GetDataDics();
     }
 
-    public List<Dictionary<string, string>> GetEnemyLines()
+    public Dictionary<string, Dictionary<string, string>> GetEnemyDataDics()
     {
-        return enemyData.GetLines();
+        return enemyData.GetDataDics();
     }
 
-    public List<Dictionary<string, string>> GetLevelLines()
-    {
-        return levelData.GetLines();
+    public Dictionary<string, Dictionary<string, string>> GetLevelDataDics()
+{
+        return levelData.GetDataDics();
     }
 
-    public Dictionary<string, string> GetCardById(string id)
+    public string GetCardDataById(string id,string dataType)
     {
-        return cardData.GetOneById(id);
+        return cardData.GetDataById(id,dataType);
     }
 
-    public Dictionary<string, string> GetEnemyById(string id)
+    public string GetEnemyDataById(string id, string dataType)
     {
-        return enemyData.GetOneById(id);
+        return enemyData.GetDataById(id, dataType);
     }
 
-    public Dictionary<string, string> GetLevelById(string id)
+    public string GetLevelById(string id, string dataType)
     {
-        return levelData.GetOneById(id);
+        return levelData.GetDataById(id, dataType);
     }
 }

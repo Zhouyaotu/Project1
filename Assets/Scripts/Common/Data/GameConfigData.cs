@@ -6,48 +6,56 @@ using UnityEngine;
 public class GameConfigData
 {
     //存储配置表中的所有数据
-    private List<Dictionary<string, string>> dataDic;
+    private List<Dictionary<string, string>> dicList;
+    private Dictionary<string, Dictionary<string, string>> dataDics;
 
     public GameConfigData(string str)
     {
-        dataDic = new List<Dictionary<string, string>>();
+        dicList = new List<Dictionary<string, string>>();
+        dataDics = new Dictionary<string, Dictionary<string, string>>();
 
         //换行切割
         string[] lines = str.Split('\n');
         //第一行存储数据类型
         string[] title = lines[0].Trim().Split('\t');
-        //第三行开始遍历数据
-        for(int i=2; i<lines.Length; i++)
-        {
-            Dictionary<string,string> dic= new Dictionary<string,string>();
 
+        for(int j=1; j<title.Length; j++)
+        {
+            dataDics.Add(title[j], new Dictionary<string, string>());
+        }
+
+        for(int i=1;i<lines.Length; i++)
+        {
             string[] tmpArr = lines[i].Trim().Split('\t');
-
-            for(int j=0; j<tmpArr.Length; j++)
+            
+            for(int j = 1; j < tmpArr.Length; j++)
             {
-                dic.Add(title[j], tmpArr[j]);
+                dataDics[title[j]].Add(tmpArr[0], tmpArr[j]);
             }
-
-            dataDic.Add(dic);
         }
     }
 
-    public List<Dictionary<string,string>> GetLines()
+
+    public Dictionary<string, Dictionary<string, string>> GetDataDics()
     {
-        return dataDic;
+        return dataDics;
     }
 
-    public Dictionary<string,string> GetOneById(string id)
+
+
+    public string GetDataById(string id,string dataType)
     {
-        for(int i=0; i<dataDic.Count; i++)
+        if (!dataDics.TryGetValue(dataType, out Dictionary<string, string> dict))
         {
-            Dictionary<string,string> dic= dataDic[i];
-            if (id == dic["ID"])
-            {
-                return dic;
-            }
+            UnityEngine.Debug.Log("Cann't Find Data Type: "+dataType);
+            return null;
+        }else if(!dict.TryGetValue(id, out string targetData)){
+            UnityEngine.Debug.Log("Cann't Find ID: " + id);
+            return null;
         }
 
-        return null;
+        return dataDics[dataType][id];
     }
 }
+
+

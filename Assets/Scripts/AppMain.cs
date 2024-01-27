@@ -33,8 +33,8 @@ public class AppMain : MonoBehaviour
         AudiManager.Instance.PlayBGM("bgm1");
 
         //Test
-        string name = GameConfigManager.Instance.GetCardById("10001")["name"];
-        UnityEngine.Debug.Log("test:" + name);
+        string name = GameConfigManager.Instance.GetCardDataById("10001",PropertyType.name);
+        UnityEngine.Debug.Log("Newest version test:" + name);
         //print(name);
     }
 
