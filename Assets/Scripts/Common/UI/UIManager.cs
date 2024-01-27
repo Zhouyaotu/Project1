@@ -18,6 +18,10 @@ public class UIManager : MonoBehaviour
     void Awake()
     {
         Instance = this;
+    }
+
+    public void Init()
+    {
         uiRootTrf = GameObject.Find("UI").transform;
     }
 
