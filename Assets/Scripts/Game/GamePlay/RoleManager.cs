@@ -6,7 +6,7 @@ public class RoleManager : MonoBehaviour
 {
     public static RoleManager Instance;
 
-    List<string> cardList = new List<string>(); // 这个初始化在什么时候执行？
+    private List<string> cardList = new List<string>(); // 这个初始化在什么时候执行？
 
     private void Awake()
     {
@@ -16,5 +16,10 @@ public class RoleManager : MonoBehaviour
     public void Init()
     {
         this.cardList = new List<string>();
+    }
+
+    public List<string> GetCardPile()
+    {
+        return this.cardList;
     }
 }
