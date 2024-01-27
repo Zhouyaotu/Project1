@@ -8,8 +8,13 @@ public class AppMain : MonoBehaviour
     {
         // 单例统一加载
         // TODO 各种单例类应该单独管理，而不是挂到GameRoot上
+
+        // Common
         this.gameObject.AddComponent<UIManager>();
         this.gameObject.AddComponent<AudiManager>();
+
+        // GamePlay
+        this.gameObject.AddComponent<RoleManager>();
     }
 
     void Start()
