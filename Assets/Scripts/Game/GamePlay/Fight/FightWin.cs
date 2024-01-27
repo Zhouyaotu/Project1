@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FightStatWin : FightUnit
+public class FightWin : FightUnit
 {
     public override void Init()
     {

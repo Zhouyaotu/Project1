@@ -15,6 +15,7 @@ public class AppMain : MonoBehaviour
 
         // GamePlay
         this.gameObject.AddComponent<RoleManager>();
+        this.gameObject.AddComponent<FightManager>();
     }
 
     void Start()
@@ -22,6 +23,7 @@ public class AppMain : MonoBehaviour
         // 单例初始化
         UIManager.Instance.Init();
         AudiManager.Instance.Init();
+        RoleManager.Instance.Init();
 
         // NOTE：这里的名字要和prefab的名字一致
         // 应该改为每一个UI脚本都有一个名字，用于注册Dict
