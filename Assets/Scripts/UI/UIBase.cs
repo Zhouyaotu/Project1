@@ -34,4 +34,10 @@ public class UIBase : MonoBehaviour
     {
 
     }
+
+    public UIEvenTrigger ClickEventRegister(string name)
+    {
+        var tsf = this.transform.Find(name);
+        return UIEvenTrigger.Get(tsf.gameObject);
+    }
 }

@@ -6,6 +6,7 @@ public class AppMain : MonoBehaviour
 {
     private void Awake()
     {
+        // TODO 各种单例类应该单独管理，而不是挂到GameRoot上
         this.gameObject.AddComponent<UIManager>();
     }
 

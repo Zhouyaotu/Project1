@@ -27,7 +27,7 @@ public class UIManager : MonoBehaviour
         if(!uiList.TryGetValue(name, out ui))
         {
             // TODO: 实现一个资源管理类，加载addressable资源
-            GameObject uiGO = Instantiate( Resources.Load("UI/" + name)) as GameObject;
+            GameObject uiGO = Instantiate( Resources.Load("Prefabs/UI/" + name)) as GameObject;
             if(uiGO)
             {
                 uiGO.transform.SetParent(uiRootTrf, false);
