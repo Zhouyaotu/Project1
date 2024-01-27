@@ -28,7 +28,7 @@ public class FightStatManager : MonoBehaviour
         switch (stat)
         {
             case FightStat.Start:
-                this.currentFightStat = new FightStart();
+                this.currentFightStat = new FightBegin();
                 break;
             case FightStat.PlayerTurn:
                 this.currentFightStat = new FightPlayerTurn();

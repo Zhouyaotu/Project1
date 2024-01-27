@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FightStart : FightUnit
+public class FightBegin : FightUnit
 {
     public override void Init()
     {
@@ -13,6 +13,7 @@ public class FightStart : FightUnit
         EnemyManager.Instance.LoadEnemyRes("Ä³¸öLevelID");
 
         // ÇÐ»»Õ½¶·UI
+        UIManager.Instance.ShowUI<FightView>("FightUI");
     }
 
     public override void OnUpdate()
