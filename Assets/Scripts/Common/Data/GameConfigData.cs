@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.LightingExplorerTableColumn;
 
 //游戏配置表类，每个对象对应一个txt配置表
 public class GameConfigData
@@ -55,6 +56,16 @@ public class GameConfigData
         }
 
         return dataDics[dataType][id];
+    }
+
+    public Dictionary<string,string> GetLineById(string id)
+    {
+        Dictionary<string, string>  dataDic = new Dictionary<string, string>();
+        foreach(var item in dataDics)
+        {
+            dataDic.Add(item.Key, item.Value[id]);
+        }
+        return dataDic;
     }
 }
 

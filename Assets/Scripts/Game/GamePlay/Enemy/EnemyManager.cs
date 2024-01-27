@@ -28,19 +28,42 @@ public class EnemyManager : MonoBehaviour
     }
 
     // 这个函数会在单次执行的时候把关卡中的所有敌人加载进来
-    public void LoadEnemyRes(string levelID)
+    public void LoadEnemyResources(string levelID)
     {
         this.ResetEnemies();
 
-        Dictionary<string, string> levelData;
+        //Dictionary<string, string> levelData;
+        //levelData = GameConfigManager.Instance.GetLevelDataDics()[levelID];
 
-        string[] enemyIDList;
-        string[] enemyPosList;
+        string[] enemyIdList = GameConfigManager.Instance.GetLevelById(levelID, PropertyType.enemyIdList).Split('/');
 
+        string[] enemyPositionList = GameConfigManager.Instance.GetLevelById(levelID, PropertyType.enemyPositionList).Split('/');
+
+        for(int i=0;i<enemyIdList.Length;i++)
+        {
+            string[] posCoord = enemyPositionList[i].Split(",");
+
+            float x = float.Parse(posCoord[0]);
+            float y = float.Parse(posCoord[1]);
+            float z = float.Parse(posCoord[2]);
+
+            Dictionary<string,string> enemyData = GameConfigManager.Instance.GetEnemyLineById(enemyIdList[i]);
+
+            GameObject gameObject = Object.Instantiate(Resources.Load(enemyData[PropertyType.model])) as GameObject;
+
+            Enemy enemy=gameObject.AddComponent<Enemy>();
+
+            enemy.Init(enemyData);
+
+            gameObject.transform.position = new Vector3(x, y, z);
+
+            enemyList.Add(enemy);
+        }
+        /*
         //=== foreach enemyIDList ===
         string enemyID;
         Vector3 enemyPos;
-        Dictionary<string, string> enemyData;
+        //Dictionary<string, string> enemyData;
 
         // Instantiate from Resource.Load(enemyData.Model)
         GameObject enemyGO;
@@ -51,6 +74,6 @@ public class EnemyManager : MonoBehaviour
 
         //enemyList.Add(enemy);
         //=== end foreach ===
-
+        */
     }
 }

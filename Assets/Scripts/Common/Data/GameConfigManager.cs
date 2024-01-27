@@ -21,6 +21,10 @@ public class PropertyType
     //Common data type
     public const string name = "name";
     public const string idx = "index";
+
+    //Level Only
+    public const string enemyIdList = "enemyIdList";
+    public const string enemyPositionList = "enemyPosList";
 }
 
 
