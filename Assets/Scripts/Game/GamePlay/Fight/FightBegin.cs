@@ -10,7 +10,7 @@ public class FightBegin : FightUnit
         AudiManager.Instance.PlayBGM("battle");
 
         // 加载关卡敌人
-        EnemyManager.Instance.LoadEnemyResources("某个LevelID");
+        EnemyManager.Instance.LoadEnemyResources("10001");
 
         // 初始化关卡玩家数据
         FightStatManager.Instance.InitPlayer();

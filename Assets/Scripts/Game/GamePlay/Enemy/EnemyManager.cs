@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.LightingExplorerTableColumn;
 
 public class EnemyManager : MonoBehaviour
 {
@@ -35,8 +36,10 @@ public class EnemyManager : MonoBehaviour
         //Dictionary<string, string> levelData;
         //levelData = GameConfigManager.Instance.GetLevelDataDics()[levelID];
 
+        UnityEngine.Debug.Log("Reading enemyIdList..." );
         string[] enemyIdList = GameConfigManager.Instance.GetLevelById(levelID, PropertyType.enemyIdList).Split('/');
 
+        UnityEngine.Debug.Log("Reading enemyPosList...");
         string[] enemyPositionList = GameConfigManager.Instance.GetLevelById(levelID, PropertyType.enemyPositionList).Split('/');
 
         for(int i=0;i<enemyIdList.Length;i++)

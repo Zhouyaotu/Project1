@@ -1,5 +1,5 @@
-ID	name	idx	
-10000	全部	0	
-10001	攻击	1	
-10002	防御	2	
-10003	消耗	3	
+ID	name	idx	model	
+10000	全部	0	Model/Slime	
+10001	攻击	1	Model/Golem	
+10002	防御	2	Model/TurtleShell	
+10003	消耗	3		
