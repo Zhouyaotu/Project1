@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RoleManager : MonoBehaviour
+public class PlayerManager : MonoBehaviour
 {
-    public static RoleManager Instance;
+    public static PlayerManager Instance;
 
     private List<string> cardList = new List<string>(); // 这个初始化在什么时候执行？
 
     private void Awake()
     {
-        RoleManager.Instance = this;
+        PlayerManager.Instance = this;
     }
 
     public void Init()

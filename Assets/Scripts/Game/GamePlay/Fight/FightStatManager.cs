@@ -22,6 +22,10 @@ public class FightStatManager : MonoBehaviour
     {
         FightStatManager.Instance = this;
     }
+    public void Init()
+    {
+
+    }
 
     public void SwitchFightStat(FightStat stat)
     {

@@ -19,7 +19,7 @@ public class FightCardManager : MonoBehaviour
         cardPile = new List<string>();
         usedCardPile = new List<string>();
 
-        var tempCardPile = new List<string>(RoleManager.Instance.GetCardPile());
+        var tempCardPile = new List<string>(PlayerManager.Instance.GetCardPile());
         // 将玩家配好的牌组洗入游戏牌堆中
         while(tempCardPile.Count > 0)
         {

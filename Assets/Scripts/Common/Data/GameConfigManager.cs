@@ -25,15 +25,18 @@ public class PropertyType
 
 
 //整个游戏配置表的管理器
-public class GameConfigManager
+public class GameConfigManager : MonoBehaviour
 {
-    public static GameConfigManager Instance =new GameConfigManager();
+    public static GameConfigManager Instance;
 
     private GameConfigData cardData;
     private GameConfigData enemyData;
     private GameConfigData levelData;
 
-    //textAsset本来在此处
+    private void Awake()
+    {
+        GameConfigManager.Instance = this;
+    }
 
     //初始化txt配置文件并加载
     public void init()

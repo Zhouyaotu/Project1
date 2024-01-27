@@ -12,9 +12,10 @@ public class AppMain : MonoBehaviour
         // Common
         this.gameObject.AddComponent<UIManager>();
         this.gameObject.AddComponent<AudiManager>();
+        this.gameObject.AddComponent<GameConfigManager>();
 
         // GamePlay
-        this.gameObject.AddComponent<RoleManager>();
+        this.gameObject.AddComponent<PlayerManager>();
         this.gameObject.AddComponent<FightStatManager>();
         this.gameObject.AddComponent<EnemyManager>();
         this.gameObject.AddComponent<FightCardManager>();
@@ -25,8 +26,12 @@ public class AppMain : MonoBehaviour
         // 单例初始化
         UIManager.Instance.Init();
         AudiManager.Instance.Init();
-        RoleManager.Instance.Init();
         GameConfigManager.Instance.init();
+
+        PlayerManager.Instance.Init();
+        FightStatManager.Instance.Init();
+        EnemyManager.Instance.Init();
+        FightCardManager.Instance.Init();
 
         // NOTE：这里的名字要和prefab的名字一致
         // 应该改为每一个UI脚本都有一个名字，用于注册Dict
