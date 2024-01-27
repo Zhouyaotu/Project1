@@ -25,6 +25,9 @@ public class PropertyType
     //Level Only
     public const string enemyIdList = "enemyIdList";
     public const string enemyPositionList = "enemyPosList";
+
+    //Enemy Only
+    public const string model = "model";
 }
 
 
@@ -81,6 +84,11 @@ public class GameConfigManager : MonoBehaviour
     public string GetEnemyDataById(string id, string dataType)
     {
         return enemyData.GetDataById(id, dataType);
+    }
+
+    public Dictionary<string,string> GetEnemyLineById(string id)
+    {
+        return enemyData.GetLineById(id);
     }
 
     public string GetLevelById(string id, string dataType)
