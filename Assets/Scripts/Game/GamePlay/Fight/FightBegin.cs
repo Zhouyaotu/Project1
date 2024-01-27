@@ -14,7 +14,7 @@ public class FightBegin : FightUnit
         UIManager.Instance.ShowUI<FightView>("FightUI");
 
         // 加载关卡敌人 TODO
-        EnemyManager.Instance.LoadEnemyRes("某个LevelID");
+        EnemyManager.Instance.LoadEnemyResources("某个LevelID");
 
         // 初始化关卡玩家数据
         FightStatManager.Instance.InitPlayer();
