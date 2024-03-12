@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnityEditor.LightingExplorerTableColumn;
 
+/**
+ * EnemyManager
+ * 管理敌人加载等
+ */
 public class EnemyManager : MonoBehaviour
 {
     public static EnemyManager Instance;
@@ -31,12 +35,14 @@ public class EnemyManager : MonoBehaviour
     // 这个函数会在单次执行的时候把关卡中的所有敌人加载进来
     public void LoadEnemyResources(string levelID)
     {
+        // 每次加载关卡敌人时先清除所有可能的敌人数据
         this.ResetEnemies();
 
         //Dictionary<string, string> levelData;
         //levelData = GameConfigManager.Instance.GetLevelDataDics()[levelID];
 
         UnityEngine.Debug.Log("Reading enemyIdList..." );
+        // 注意潜规则：默认分割符号是 ‘/’
         string[] enemyIdList = GameConfigManager.Instance.GetLevelById(levelID, PropertyType.enemyIdList).Split('/');
 
         UnityEngine.Debug.Log("Reading enemyPosList...");
@@ -62,21 +68,5 @@ public class EnemyManager : MonoBehaviour
 
             enemyList.Add(enemy);
         }
-        /*
-        //=== foreach enemyIDList ===
-        string enemyID;
-        Vector3 enemyPos;
-        //Dictionary<string, string> enemyData;
-
-        // Instantiate from Resource.Load(enemyData.Model)
-        GameObject enemyGO;
-        //enemyGO.transform.position = enemyPos;
-
-        //Enemy enemy = enemyGO.AddComponent<Enemy>();
-        //enemy.Init(enemyData);
-
-        //enemyList.Add(enemy);
-        //=== end foreach ===
-        */
     }
 }

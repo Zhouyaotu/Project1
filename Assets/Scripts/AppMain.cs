@@ -6,8 +6,8 @@ public class AppMain : MonoBehaviour
 {
     private void Awake()
     {
-        // µ¥ÀıÍ³Ò»¼ÓÔØ
-        // TODO ¸÷ÖÖµ¥ÀıÀàÓ¦¸Ãµ¥¶À¹ÜÀí£¬¶ø²»ÊÇ¹Òµ½GameRootÉÏ
+        // å•ä¾‹ç»Ÿä¸€åŠ è½½
+        // TODO å„ç§å•ä¾‹ç±»åº”è¯¥å•ç‹¬ç®¡ç†ï¼Œè€Œä¸æ˜¯æŒ‚åˆ°GameRootä¸Š
 
         // Common
         this.gameObject.AddComponent<UIManager>();
@@ -23,7 +23,7 @@ public class AppMain : MonoBehaviour
 
     void Start()
     {
-        // µ¥Àı³õÊ¼»¯
+        // å•ä¾‹åˆå§‹åŒ–
         UIManager.Instance.Init();
         AudiManager.Instance.Init();
         GameConfigManager.Instance.init();
@@ -33,11 +33,12 @@ public class AppMain : MonoBehaviour
         EnemyManager.Instance.Init();
         FightCardManager.Instance.Init();
 
-        // NOTE£ºÕâÀïµÄÃû×ÖÒªºÍprefabµÄÃû×ÖÒ»ÖÂ
-        // Ó¦¸Ã¸ÄÎªÃ¿Ò»¸öUI½Å±¾¶¼ÓĞÒ»¸öÃû×Ö£¬ÓÃÓÚ×¢²áDict
-        // ÎÄ¼şÊ¹ÓÃaddressable¹ÜÀí£¨×¢ÒâÀí½âÒì²½¼ÓÔØ£©
-        UIManager.Instance.ShowUI<LoginView>("LoginUI");
+        // æ¸¸æˆåˆå§‹åŒ–åŠ è½½ 
         AudiManager.Instance.PlayBGM("bgm1");
+        UIManager.Instance.ShowUI<LoginView>("LoginUI");// NOTEï¼šè¿™é‡Œçš„åå­—è¦å’Œprefabçš„åå­—ä¸€è‡´
+        // TODO åº”è¯¥æ”¹ä¸ºæ¯ä¸€ä¸ªUIè„šæœ¬éƒ½æœ‰ä¸€ä¸ªåå­—ï¼Œç”¨äºæ³¨å†ŒDict
+        // æ–‡ä»¶ä½¿ç”¨addressableç®¡ç†ï¼ˆæ³¨æ„ç†è§£å¼‚æ­¥åŠ è½½ï¼‰
+        
 
         //Test
         string name = GameConfigManager.Instance.GetCardDataById("10001",PropertyType.name);

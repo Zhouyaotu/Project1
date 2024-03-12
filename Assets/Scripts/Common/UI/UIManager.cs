@@ -66,7 +66,7 @@ public class UIManager : MonoBehaviour
         if (uiList.TryGetValue(name, out UIBase ui))
         {
             uiList.Remove(name);
-            ui.OnDestroy();
+            ui.Destroy();
             Destroy(ui.gameObject);
         }
     }
@@ -76,7 +76,7 @@ public class UIManager : MonoBehaviour
         foreach (var item in uiList)
         {
             UIBase ui = item.Value;
-            ui.OnDestroy();
+            ui.Destroy();
             Destroy(ui.gameObject);
         }
         uiList.Clear();

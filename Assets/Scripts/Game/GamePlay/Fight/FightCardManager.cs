@@ -19,13 +19,22 @@ public class FightCardManager : MonoBehaviour
         cardPile = new List<string>();
         usedCardPile = new List<string>();
 
-        var tempCardPile = new List<string>(PlayerManager.Instance.GetCardPile());
+        var playerCardPile = new List<string>(PlayerManager.Instance.GetCardPile());
         // 将玩家配好的牌组洗入游戏牌堆中
-        while(tempCardPile.Count > 0)
+        while (playerCardPile.Count > 0)
         {
-            int randomIdx = Random.Range(0, tempCardPile.Count);
-            cardPile.Add(tempCardPile[randomIdx]);
-            tempCardPile.RemoveAt(randomIdx);
+            int randomIdx = Random.Range(0, playerCardPile.Count);
+            cardPile.Add(playerCardPile[randomIdx]);
+            playerCardPile.RemoveAt(randomIdx);
         }
+    }
+
+    public int cardCount{
+        get { return this.cardPile.Count; }
+    }
+
+    public int usedCardCount
+    {
+        get { return this.usedCardPile.Count; }
     }
 }

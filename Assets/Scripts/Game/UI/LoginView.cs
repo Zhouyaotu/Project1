@@ -21,10 +21,25 @@ public class LoginView : UIBase
         //this.btnStartEventTrigger.SetClickCallback(this.OnClick);
     }
 
+    protected override void OnShow()
+    {
+        this.gameObject.SetActive(true);
+    }
+
+    protected override void OnHide()
+    {
+        this.gameObject.SetActive(false);
+    }
+
+    protected override void OnDestroyUI()
+    {
+        
+    }
+
     private void OnClick(GameObject go, PointerEventData pData)
     {
         Debug.Log("Start OnClick !");
         this.Hide();
-        FightStatManager.Instance.SwitchFightStat(FightStat.Start);
+        FightStatManager.Instance.SwitchFightStat(FightStat.Begin);
     }
 }

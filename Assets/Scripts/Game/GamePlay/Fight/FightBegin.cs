@@ -6,17 +6,14 @@ public class FightBegin : FightUnit
 {
     public override void Init()
     {
-        // 播放战斗BGM
-        AudiManager.Instance.PlayBGM("battle");
-
-        // 加载关卡敌人
-        EnemyManager.Instance.LoadEnemyResources("10001");
-
-        // 初始化关卡玩家数据
-        FightStatManager.Instance.InitPlayer();
+        // 初始化加载关卡（按照关卡ID加载）
+        FightStatManager.Instance.InitGameFight("10001");
 
         // 切换战斗UI
         UIManager.Instance.ShowUI<FightView>("FightUI");
+        
+        // 播放战斗BGM
+        AudiManager.Instance.PlayBGM("battle");
     }
 
     public override void OnUpdate()

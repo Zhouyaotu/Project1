@@ -2,8 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// Player类主要管理对局中玩家状态，永远只被FightStateManager持有
-public class FightPlayer
+/**
+ *  PlayerStat
+ *  Player类主要管理对局中玩家状态，永远只被FightStateManager持有
+ */
+public class PlayerStat
 {
     public int maxHp;
     public int curHp;

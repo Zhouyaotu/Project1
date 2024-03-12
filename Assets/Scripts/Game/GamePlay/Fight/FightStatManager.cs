@@ -5,7 +5,7 @@ using UnityEngine;
 public enum FightStat
 {
     None,
-    Start,
+    Begin,
     PlayerTurn,
     EnemyTurn,
     Win,
@@ -16,9 +16,11 @@ public class FightStatManager : MonoBehaviour
 {
     public static FightStatManager Instance;
 
-    private FightUnit currentFightStat;
+    // 当前战斗状态
+    private FightUnit curFightStat;
 
-    private FightPlayer fightPlayer;
+    // 当前进行战斗的玩家
+    private PlayerStat curPlayerStat;
 
     private void Awake()
     {
@@ -27,7 +29,7 @@ public class FightStatManager : MonoBehaviour
 
     public void Init()
     {
-        this.fightPlayer = new FightPlayer();
+        this.curPlayerStat = new PlayerStat();
         
     }
 
@@ -36,97 +38,120 @@ public class FightStatManager : MonoBehaviour
     {
         switch (stat)
         {
-            case FightStat.Start:
-                this.currentFightStat = new FightBegin();
+            case FightStat.Begin:
+                this.curFightStat = new FightBegin();
                 break;
             case FightStat.PlayerTurn:
-                this.currentFightStat = new FightPlayerTurn();
+                this.curFightStat = new FightPlayerTurn();
                 break;
             case FightStat.EnemyTurn:
-                this.currentFightStat = new FightEnemyTurn();
+                this.curFightStat = new FightEnemyTurn();
                 break;
             case FightStat.Win:
-                this.currentFightStat = new FightWin();
+                this.curFightStat = new FightWin();
                 break;
             case FightStat.Lose:
-                this.currentFightStat = new FightLose();
+                this.curFightStat = new FightLose();
                 break;
             default:
                 break;
         }
-        currentFightStat.Init();
+        curFightStat.Init();
     }
 
     private void Update()
     {
-        if(this.currentFightStat != null)
+        if(this.curFightStat != null)
         {
-            this.currentFightStat.OnUpdate();
+            this.curFightStat.OnUpdate();
         }
+    }
+
+    public void InitGameFight(string levelID)
+    {
+        // 初始化加载关卡敌人（按照关卡ID加载）
+        InitEnemys(levelID);
+
+        // 初始化关卡玩家数据
+        InitPlayer();
+
+        // 初始化关卡中牌组数据
+        InitPlayerCardPile();
     }
 
     public void InitPlayer()
     {
-        this.fightPlayer.Init(10,10,10);
+        // TODO 通过PlayerMgr获取角色的状态
+        this.curPlayerStat.Init(10,10,10);
+    }
+
+    public void InitPlayerCardPile()
+    {
+        FightCardManager.Instance.Init();
+    }
+
+    public void InitEnemys(string levelID)
+    {
+        EnemyManager.Instance.LoadEnemyResources(levelID);
     }
 
     #region 管理对局中Player状态
     //======================
     // 管理对局中Player状态
     //======================
-    int PlayerMaxHp
+    public int PlayerMaxHp
     {
         get
         {
-            return this.fightPlayer.maxHp;
+            return this.curPlayerStat.maxHp;
         }
         set
         {
-            this.fightPlayer.maxHp = value;
+            this.curPlayerStat.maxHp = value;
         }
     }
-    int PlayerCurHp
+    public int PlayerCurHp
     {
         get
         {
-            return this.fightPlayer.curHp;
+            return this.curPlayerStat.curHp;
         }
         set
         {
-            this.fightPlayer.curHp = value;
+            this.curPlayerStat.curHp = value;
         }
     }
-    int PlayerMaxPower
+    public int PlayerMaxPower
     {
         get
         {
-            return this.fightPlayer.maxPower;
+            return this.curPlayerStat.maxPower;
         }
         set
         {
-            this.fightPlayer.maxPower = value;
+            this.curPlayerStat.maxPower = value;
         }
     }
-    int PlayerCurPower
+    public int PlayerCurPower
     {
         get
         {
-            return this.fightPlayer.curPower;
+            return this.curPlayerStat.curPower;
         }
         set
         {
-            this.fightPlayer.curPower = value;
+            this.curPlayerStat.curPower = value;
         }
     }
-    int PlayerDefense
+    public int PlayerDefense
     {
         get
         {
-            return this.fightPlayer.defense;
+            return this.curPlayerStat.defense;
         }
         set
         {
-            this.fightPlayer.defense = value;
+            this.curPlayerStat.defense = value;
         }
     }
     #endregion
